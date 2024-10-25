@@ -9,29 +9,38 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class=" bg-slate-900">
+<body class=" bg-stone-900 text-white">
     <div class="container d-flex mx-auto justify-center text-center max-h-max">
-        <h2 class=" text-3xl font-semibold text-white">Tabel Users</h2>
-        <div class="overflow-x-auto">
-            <table class="min-w-full bg-white border border-gray-300 rounded-lg shadow-md">
-                <thead>
-                    <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
-                        <th class="py-3 px-6 text-left">ID</th>
-                        <th class="py-3 px-6 text-left">Nama</th>
-                        <th class="py-3 px-6 text-center">Kelas</th>
-                        <th class="py-3 px-6 text-center">Aksi</th>
+        <h2 class=" drop-shadow-[0px_0px_4px_rgba(255,0,0,0.75)] text-3xl font-semibold tracking-wider my-8">Tabel
+            Users
+        </h2>
+        <div class="overflow-x-auto drop-shadow-[6px_6px_4px_rgba(0,0,0,0.75)]">
+            <table class=" min-w-full rounded-lg">
+                <thead class="bg-red-600">
+                    <tr class=" text-center">
+                        <th class="py-3 px-6 text-xs font-medium uppercase tracking-wider">
+                            Nama</th>
+                        <th class="py-3 px-6 text-xs font-medium uppercase tracking-wider">
+                            Username</th>
+                        <th class="py-3 px-6 text-xs font-medium uppercase tracking-wider">
+                            Email</th>
+                        <th class="py-3 px-6 text-xs font-medium uppercase tracking-wider">
+                            Phone</th>
+                        <th class="py-3 px-6 text-xs font-medium uppercase tracking-wider">
+                            Aksi</th>
                     </tr>
                 </thead>
-                <tbody class="text-gray-700 text-sm font-light">
-                    <tr class="border-b border-gray-300 hover:bg-gray-100">
-                        <td class="py-3 px-6 text-left">1</td>
-                        <td class="py-3 px-6 text-left">Budi Santoso</td>
-                        <td class="py-3 px-6 text-center">10</td>
-                        <td class="py-3 px-6 text-center">
-                            <button class="bg-blue-500 text-white py-1 px-3 rounded hover:bg-blue-600">Edit</button>
-                            <button class="bg-red-500 text-white py-1 px-3 rounded hover:bg-red-600 ml-2">Hapus</button>
-                        </td>
-                    </tr>
+                <tbody class="bg-red-900 divide-x-2 divide-red-800 text-sm">
+                    @foreach ($users as $user)
+                        <tr>
+                            <td class="py-4 px-6 whitespace-nowrap">{{ $user['name'] }}</td>
+                            <td class="py-4 px-6 whitespace-nowrap">{{ $user['username'] }}</td>
+                            <td class="py-4 px-6 whitespace-nowrap ">{{ $user['email'] }} </td>
+                            <td class="py-4 px-6 whitespace-nowrap">${{ $user['phone'] }}</td>
+                            <td class="py-4 px-6 whitespace-nowrap cursor-pointer">
+                                Edit | Delete</td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
