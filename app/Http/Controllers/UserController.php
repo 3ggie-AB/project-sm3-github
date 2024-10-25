@@ -10,4 +10,8 @@ class UserController extends Controller
         $users = Http::get('https://jsonplaceholder.typicode.com/users')->json();
         return view('users.index',compact('users'));
     }
+    public function card(){
+        $users = Http::get('https://jsonplaceholder.typicode.com/users')->json();
+        return view('users.card',compact('users'));
+    }
 }
