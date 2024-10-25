@@ -13,7 +13,6 @@
     <div class="container mx-auto px-4 py-8">
         <h2 class="text-center drop-shadow-[0px_0px_4px_rgba(255,0,0,0.75)] text-3xl font-semibold tracking-wider my-8">
             Daftar Pengguna</h2>
-
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             @foreach ($users as $user)
                 <div class="bg-red-600 p-6 rounded-lg shadow-lg drop-shadow-[6px_6px_4px_rgba(0,0,0,0.75)]">
