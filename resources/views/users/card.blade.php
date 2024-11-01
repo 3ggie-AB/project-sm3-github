@@ -9,9 +9,10 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-stone-900 text-white">
+<body class="bg-slate-200 text-white">
     <div class="container mx-auto px-4 py-8">
-        <h2 class="text-center drop-shadow-[0px_0px_4px_rgba(255,0,0,0.75)] text-3xl font-semibold tracking-wider my-8">
+        <h2
+            class="text-center drop-shadow-[0px_0px_4px_rgba(20,0,0,0.7)] bg-black rounded-full text-3xl font-semibold tracking-wider my-8 py-3">
             Daftar Pengguna</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             @foreach ($users as $user)
